@@ -1,0 +1,206 @@
+/*!
+*	______ _	   _   _
+*	|  ____| |	 | | (_)
+*	| |__  | | __ _| |_ _  ___ ___  _ __
+*	|  __| | |/ _` | __| |/ __/ _ \| '_ \
+*	| |	| | (_| | |_| | (_| (_) | | | |
+*	|_|	|_|\__,_|\__|_|\___\___/|_| |_|
+*
+*		 https://www.flaticon.com
+*/
+
+@font-face {
+	font-family: "flaticon";
+	src: url("../fonts/flaticon.woff2?553c94bd8a3f0d24e290f55fb5c99649") format("woff2"),
+url("../fonts/flaticon.woff?553c94bd8a3f0d24e290f55fb5c99649") format("woff"),
+url("../fonts/flaticon.eot?553c94bd8a3f0d24e290f55fb5c99649#iefix") format("embedded-opentype"),
+url("../fonts/flaticon.ttf?553c94bd8a3f0d24e290f55fb5c99649") format("truetype"),
+url("../fonts/flaticon.svg?553c94bd8a3f0d24e290f55fb5c99649#flaticon") format("svg")
+}
+
+i[class^="flaticon-"]:before, i[class*=" pbmit-dsdesign-icon-"]:before {
+	font-family: flaticon !important;
+	font-style: normal;
+	font-weight: normal !important;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.pbmit-dsdesign-icon-brickwall:before {
+	content: "\f101";
+}
+.pbmit-dsdesign-icon-pantone:before {
+	content: "\f102";
+}
+.pbmit-dsdesign-icon-bathroom:before {
+	content: "\f103";
+}
+.pbmit-dsdesign-icon-living-room:before {
+	content: "\f104";
+}
+.pbmit-dsdesign-icon-blueprint:before {
+	content: "\f105";
+}
+.pbmit-dsdesign-icon-quote-left:before {
+	content: "\f106";
+}
+.pbmit-dsdesign-icon-cushions:before {
+	content: "\f107";
+}
+.pbmit-dsdesign-icon-right-quotation-mark:before {
+	content: "\f108";
+}
+.pbmit-dsdesign-icon-brickwall-1:before {
+	content: "\f109";
+}
+.pbmit-dsdesign-icon-star:before {
+	content: "\f10a";
+}
+.pbmit-dsdesign-icon-stairs:before {
+	content: "\f10b";
+}
+.pbmit-dsdesign-icon-star-1:before {
+	content: "\f10c";
+}
+.pbmit-dsdesign-icon-armchair:before {
+	content: "\f10d";
+}
+.pbmit-dsdesign-icon-user:before {
+	content: "\f10e";
+}
+.pbmit-dsdesign-icon-kitchen:before {
+	content: "\f10f";
+}
+.pbmit-dsdesign-icon-bathtub:before {
+	content: "\f110";
+}
+.pbmit-dsdesign-icon-axis:before {
+	content: "\f111";
+}
+.pbmit-dsdesign-icon-trophy:before {
+	content: "\f112";
+}
+.pbmit-dsdesign-icon-house:before {
+	content: "\f113";
+}
+.pbmit-dsdesign-icon-world:before {
+	content: "\f114";
+}
+.pbmit-dsdesign-icon-3d:before {
+	content: "\f115";
+}
+.pbmit-dsdesign-icon-portfolio:before {
+	content: "\f116";
+}
+.pbmit-dsdesign-icon-paint:before {
+	content: "\f117";
+}
+.pbmit-dsdesign-icon-satisfaction:before {
+	content: "\f118";
+}
+.pbmit-dsdesign-icon-bed:before {
+	content: "\f119";
+}
+.pbmit-dsdesign-icon-phone:before {
+	content: "\f11a";
+}
+.pbmit-dsdesign-icon-blueprint-1:before {
+	content: "\f11b";
+}
+.pbmit-dsdesign-icon-telephone:before {
+	content: "\f11c";
+}
+.pbmit-dsdesign-icon-blueprint-2:before {
+	content: "\f11d";
+}
+.pbmit-dsdesign-icon-map:before {
+	content: "\f11e";
+}
+.pbmit-dsdesign-icon-placeholder:before {
+	content: "\f11f";
+}
+.pbmit-dsdesign-icon-message:before {
+	content: "\f120";
+}
+.pbmit-dsdesign-icon-right:before {
+	content: "\f121";
+}
+.pbmit-dsdesign-icon-left:before {
+	content: "\f122";
+}
+.pbmit-dsdesign-icon-up-right-arrow:before {
+	content: "\f123";
+}
+.pbmit-dsdesign-icon-check-mark:before {
+	content: "\f124";
+}
+.pbmit-dsdesign-icon-wallet:before {
+	content: "\f125";
+}
+.pbmit-dsdesign-icon-clock:before {
+	content: "\f126";
+}
+.pbmit-dsdesign-icon-tick-mark:before {
+	content: "\f127";
+}
+.pbmit-dsdesign-icon-conversation:before {
+	content: "\f128";
+}
+.pbmit-dsdesign-icon-hard-hat:before {
+	content: "\f129";
+}
+.pbmit-dsdesign-icon-tools:before {
+	content: "\f12a";
+}
+.pbmit-dsdesign-icon-house-design:before {
+	content: "\f12b";
+}
+.pbmit-dsdesign-icon-drill:before {
+	content: "\f12c";
+}
+.pbmit-dsdesign-icon-compass:before {
+	content: "\f12d";
+}
+.pbmit-dsdesign-icon-tape-measure:before {
+	content: "\f12e";
+}
+.pbmit-dsdesign-icon-eco-home:before {
+	content: "\f12f";
+}
+.pbmit-dsdesign-icon-plastering:before {
+	content: "\f130";
+}
+.pbmit-dsdesign-icon-calendar:before {
+	content: "\f131";
+}
+.pbmit-dsdesign-icon-people:before {
+	content: "\f132";
+}
+.pbmit-dsdesign-icon-warranty:before {
+	content: "\f133";
+}
+.pbmit-dsdesign-icon-premium:before {
+	content: "\f134";
+}
+.pbmit-dsdesign-icon-offer:before {
+	content: "\f135";
+}
+.pbmit-dsdesign-icon-engineer:before {
+	content: "\f136";
+}
+.pbmit-dsdesign-icon-award:before {
+	content: "\f137";
+}
+.pbmit-dsdesign-icon-magnifying-glass:before {
+	content: "\f138";
+}
+.pbmit-dsdesign-icon-trolley:before {
+	content: "\f139";
+}
+.pbmit-dsdesign-icon-client:before {
+	content: "\f13a";
+}
+
