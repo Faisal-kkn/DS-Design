@@ -72,9 +72,9 @@
 								</div>
 								<div class="pbmit-button-box">
 									<div class="pbmit-header-button">
-										<a href="tel:+1(212)%20255-511">
-											<span class="pbmit-header-button-text-1">+1(212) 255-511</span>
-											<span class="pbmit-header-button-text-2">tel:+1(212) 255-511</span>
+										<a href="tel:+919544855913">
+											<span class="pbmit-header-button-text-1">+91 9544 855 913</span>
+											<span class="pbmit-header-button-text-2">tel:+919544855913</span>
 										</a>
 									</div>
 								</div>
@@ -196,9 +196,12 @@
 									<div class="pbmit-heading animation-style2 mb-0">
 										<h2 class="pbmit-title">Send a Message</h2>
 									</div>
-									<form class="contact-form" method="post" id="contact-form" action="send.php">
+									<form class="contact-form" id="contact-form" onsubmit="sendEmail(event)">
 										<div class="row">
-
+											<div id="notification"
+												style="display:none; padding:10px; margin-top:10px; border-radius:5px;"
+												class="col-md-12 col-lg-12 message-status">
+											</div>
 											<div class="col-md-6">
 												<input type="text" class="form-control" placeholder="Your Name *"
 													name="name" required>
@@ -237,7 +240,6 @@
 													</span>
 												</button>
 											</div>
-											<div class="col-md-12 col-lg-12 message-status"></div>
 										</div>
 									</form>
 								</div>
@@ -409,8 +411,7 @@
 											<div class="pbmit-ihbox-icon">
 												<div class="pbmit-ihbox-icon-wrapper">
 													<div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-														<i
-															class="pbmit-dsdesign-icon ti-email"></i>
+														<i class="pbmit-dsdesign-icon ti-email"></i>
 													</div>
 												</div>
 											</div>
@@ -418,7 +419,8 @@
 												<h2 class="pbmit-element-title">
 													Email
 												</h2>
-												<a class="pbmit-heading-desc" href="mailto:devisree.dsdesigns@gmail.com">
+												<a class="pbmit-heading-desc"
+													href="mailto:devisree.dsdesigns@gmail.com">
 													devisree.dsdesigns@gmail.com
 												</a>
 											</div>
@@ -474,8 +476,7 @@
 											<div class="pbmit-ihbox-icon">
 												<div class="pbmit-ihbox-icon-wrapper">
 													<div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-														<i
-															class="pbmit-dsdesign-icon ti-location-arrow"></i>
+														<i class="pbmit-dsdesign-icon ti-location-arrow"></i>
 													</div>
 												</div>
 											</div>
@@ -490,7 +491,7 @@
 										</div>
 									</div>
 									<div class="pbmit-ihbox-btn">
-										<a class="pbmit-button-inner" href="about-us.html">
+										<a class="pbmit-button-inner" target="_blank" href="https://maps.app.goo.gl/tsEpyEhkWupBZbjF6">
 											<span class="pbmit-button-wrapper">
 												<span class="pbmit-button-text">Read More</span>
 											</span>
@@ -628,7 +629,7 @@
 								<div class="pbmit-footer-menu-area">
 									<div class="menu-footer-menu-container">
 										<ul class="pbmit-footer-menu">
-											
+
 											<li><a href="#">FAQ</a></li>
 										</ul>
 									</div>
@@ -714,6 +715,51 @@
 	<script src="js/jquery-validate/jquery.validate.min.js"></script>
 	<!-- Scripts JS -->
 	<script src="js/scripts.js"></script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script type="text/javascript">
+		emailjs.init("Kl2qmIFihFHfwFpJK"); // Only ONE call here
+
+		function showNotification(message, isSuccess) {
+			var notification = document.getElementById('notification');
+			notification.style.display = 'block';
+			notification.textContent = message;
+			notification.style.backgroundColor = isSuccess ? '#d4edda' : '#f8d7da'; // green/red background
+			notification.style.color = isSuccess ? '#155724' : '#721c24';           // green/red text color
+			setTimeout(() => {
+				notification.style.display = 'none';
+			}, 5000); // Hide after 5 seconds
+		}
+
+		function sendEmail(e) {
+			e.preventDefault();
+			if ($("#contact-form").valid()) {  // check if form is valid
+				$(".contact-form .message-status").html('');
+				$('.form-btn-loader').removeClass('d-none');
+				$('.contact-form button.pbmit-btn span').hide();
+				$('.contact-form button.pbmit-btn').attr("disabled", "disabled");
+				$.ajax({
+					data: $('#contact-form').serialize(),
+				});
+
+				emailjs.sendForm('service_5xuvesi', 'template_zik41wq', '#contact-form')
+					.then(function () {
+						showNotification('Your inquiry has been sent!', true);
+						$.ajax({
+							success: function (cevap) {
+								$('.form-btn-loader').addClass('d-none');
+								$('.contact-form button.pbmit-btn span').show();
+								$(".contact-form button.pbmit-btn").removeAttr("disabled");
+								$(".contact-form .message-status");
+							}
+						});
+						document.getElementById('contact-form').reset();
+					}, function (error) {
+						showNotification('Failed to send. Try again.', false);
+					});
+			}
+		}
+	</script>
+
 
 </body>
 
