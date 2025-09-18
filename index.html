@@ -402,12 +402,17 @@
 					<div class="container">
 						<div class="row g-0">
 							<div class="col-md-12 col-xl-6 pbmit-footer-left">
-								<form>
+								<form class="news-letter-form" id="news-letter-form" onsubmit="sendEmail(event)">
+									<div id="notification"
+										style="display:none; padding:10px; margin-top:10px; border-radius:5px;"
+										class="col-md-12 col-lg-12 message-status">
+									</div>
 									<div class="pbmit-newsletter">
 										<h3>Subscribe to Our Newsletter</h3>
 										<div class="pbmit-footer-email-button">
-											<input type="email" name="EMAIL" placeholder="Your email address">
-											<button class="pbmit-btn">
+											<input type="email" name="email" class="form-control"
+												placeholder="Your email address" required>
+											<button type="submit" class="pbmit-btn">
 												<span class="pbmit-button-content-wrapper">
 													<span class="pbmit-button-text">Subscribe</span>
 												</span>
@@ -415,6 +420,22 @@
 										</div>
 									</div>
 								</form>
+								<!-- <form class="news-letter-form" id="news-letter-form" onsubmit="sendEmail(event)">
+									<div id="notification" style="display:none; padding:10px; margin-top:10px; border-radius:5px;"
+										class="col-md-12 col-lg-12 message-status">
+									</div>
+									<div class="pbmit-newsletter">
+										<h3>Subscribe to Our Newsletter</h3>
+										<div class="pbmit-footer-email-button">
+											<input type="email" name="email" class="form-control" placeholder="Your email address" required>
+											<button class="pbmit-btn">
+												<span class="pbmit-button-content-wrapper">
+													<span class="pbmit-button-text">Subscribe</span>
+												</span>
+											</button>
+										</div>
+									</div>
+								</form> -->
 							</div>
 							<div class="col-md-12 col-xl-6 pbmit-footer-right">
 								<div class="pbmit-footer-bg-image">
@@ -1999,7 +2020,38 @@
 	<script src="js/isotope.pkgd.min.js"></script>
 	<!-- Scripts JS -->
 	<script src="js/scripts.js"></script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script type="text/javascript">
+		emailjs.init("Kl2qmIFihFHfwFpJK"); // Your EmailJS public key
 
+		function showNotification(message, isSuccess) {
+			const notification = document.getElementById('notification');
+			notification.style.display = 'block';
+			notification.textContent = message;
+			notification.style.backgroundColor = isSuccess ? '#d4edda' : '#f8d7da'; // green/red background
+			notification.style.color = isSuccess ? '#155724' : '#721c24';           // green/red text color
+			setTimeout(() => {
+				notification.style.display = 'none';
+			}, 5000);
+		}
+
+		function sendEmail(e) {
+			e.preventDefault();
+
+			// Disable button to prevent double submissions
+			const btn = document.querySelector("#news-letter-form button.pbmit-btn");
+			btn.disabled = true;
+
+			emailjs.sendForm('service_5xuvesi', 'template_3oppo7n', '#news-letter-form')
+				.then(() => {
+					showNotification('You have successfully subscribed to our newsletter!', true);
+					document.getElementById('news-letter-form').reset();
+					btn.disabled = false;
+				}, (error) => {
+					showNotification('Subscription failed. Please try again.', false);
+					btn.disabled = false;
+				});
+		}
+	</script>
 </body>
-
 </html>
