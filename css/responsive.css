@@ -1615,7 +1615,7 @@ body {
 		padding-top: 0;
 	}
 	.portfolio-single .pbmit-portfolio-lines-wrapper ul{
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 	.pbmit-ihbox-style-15 .pbmit-ihbox-contents{
 		padding: 40px 0 0 40px;
