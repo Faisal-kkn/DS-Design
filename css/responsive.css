@@ -3483,6 +3483,12 @@ body {
 	.footer-style-3 .pbmit-footer-menu-area .pbmit-footer-menu li:not(:first-child):before{
 		display: none;
 	}
+
+	.pbmit-portfolio-style-2 .pbminfotech-box-content {
+		transition: all .5s;
+		opacity: 1 !important;
+		transform: translateY(0) !important;
+	}
 }
 
 @media(max-width:575px) {

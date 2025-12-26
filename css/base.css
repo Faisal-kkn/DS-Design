@@ -317,6 +317,19 @@ INDEX:
     transform-style: preserve-3d;
     transition: all .5s ease-in-out;
 }
+.ds-btn{
+    position: unset !important;
+    display: block;
+    padding: 0 !important;
+}
+.ds-btn::after {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* width: 40px; */
+    /* height: 40px; */
+}
+
 .pbmit-btn .pbmit-button-content-wrapper,
 .pbmit-button .pbmit-button-wrapper,
 .pbmit-static-btn .pbmit-button-inner .pbmit-button-wrapper{
@@ -356,9 +369,14 @@ INDEX:
 		transform: translate3d(0, 0, 0);
 	}
 }
-.pbmit-btn:hover:after,
-.pbmit-static-btn .pbmit-button-inner:hover .pbmit-button-wrapper::after{
-	transform: translate3d(10px, 0, 0) rotateZ(45deg);
+.ds-btn:hover:after,
+.ds-btn .pbmit-static-btn .pbmit-button-inner:hover .pbmit-button-wrapper::after{
+    transform-origin: 50% 100%;
+    /* pivot at bottom center */
+    transform: translateX(-50%) translateY(-50%) rotate(25deg);
+
+    transition: transform 0.3s ease;
+    /* top: 0; */
 }
 .pbmit-btn-outline{
 	color: var(--pbmit-global-color);
