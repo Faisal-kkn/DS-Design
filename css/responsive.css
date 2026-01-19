@@ -3492,6 +3492,12 @@ body {
 }
 
 @media(max-width:575px) {
+	.pbmit-ihbox-style-4 .pbmit-heading-desc{
+		padding: 0 0;
+	}
+		.about-three-rightbox{
+			padding: 40px 0px 0px;
+		}
 	/*=== Section-Title ===*/
 	.pbmit-heading-subheading .pbmit-title{
 		font-size: 30px;
